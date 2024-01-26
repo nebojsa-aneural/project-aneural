@@ -1,0 +1,15 @@
+name: Deployment trigger
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  visit-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Visit External URL
+        run: |
+          curl -sL https://deploy.aneural.org/research > /dev/null
