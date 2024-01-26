@@ -3,7 +3,7 @@ name: Deployment trigger
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   visit-url:
