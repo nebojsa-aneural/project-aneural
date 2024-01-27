@@ -3,6 +3,7 @@ AI Toolkit for Computational Neuroscience
 
 ### Deployment
 To deploy latest version, commit change to main.
+Manual deployment remains optional process.
 
 ### Notifications
 Deployment notifications sent to slack channel #ro-bot-ime.
