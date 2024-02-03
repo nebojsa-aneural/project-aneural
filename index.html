@@ -34,19 +34,28 @@
       background-color: rgb(224 224 224 / var(--tw-bg-opacity));
       background: linear-gradient(#A6A6A6, #FFFFFF)
     }
+    .main-section-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .navbar-holder {
+      margin-left: 8rem;
+    }
+    .anchor-text {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
     .bg-cards {
       --tw-bg-opacity: 1;
       background-color: rgb(224 224 224 / var(--tw-bg-opacity));
       background: linear-gradient(#FFFFFF, #A5A5A5)
     }
     .img-background-restyle {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
       height: 100%;
-      object-fit: cover;
-      z-index: -1;
+      display: block;
+      width: auto;
     }
     .hero-image-paddings {
       padding-top: 50rem;
@@ -57,41 +66,30 @@
       color: #3fc4ae
     }
     @media (min-width: 320px) and (max-width: 768px) {
+      .navbar-holder {
+        margin-left: 0;
+      }
       .hero-image-paddings {
         padding-top: 0;
+      }
+      .anchor-text {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
       }
     }
   </style>
 
   <body>
-
-    <!-- Header Area wrapper Starts -->
-    <!-- <header id="header-wrap" class="relative border-b"> -->
-      <!-- Navbar Start -->
-      <!-- <div class="navigation top-0 left-0 w-full z-30 duration-300"> -->
-        <!-- <div class="container"> -->
-          <!-- <nav class="navbar navbar-expand-lg flex items-center justify-start relative duration-300" x-data="{ one: false, two: false, three: false }"> -->
-            <!-- <img class="h-28" src="assets/img/ng-03.png" alt=""> -->
-            <!-- <a class="navbar-brand text-4xl" href="index.html">AI in Healthcare</a> -->
-          <!-- </nav> -->
-        <!-- </div> -->
-      <!-- </div> -->
-      <!-- Navbar End -->
-    <!-- </header> -->
-    <!-- Header Area wrapper End -->
-
-    <!-- Hero Area Start -->
-    <section id="hero-area" class="relative  bg-hero-ball bg-center bg-no-repeat hero-image-paddings">
-      <div class="container z-20">
-          <nav class="navbar navbar-expand-lg flex items-center justify-start relative duration-300" x-data="{ one: false, two: false, three: false }">
+    <section id="hero-area" class="relative  bg-hero-ball bg-center bg-no-repeat main-section-wrapper">
+      <div class="navbar-container">
+          <nav class="navbar navbar-expand-lg flex items-center justify-start absolute navbar-holder">
             <img class="h-28" src="assets/img/ng-03.png" alt="">
-            <a class="navbar-brand text-4xl" href="index.html">AI in Healthcare</a>
+            <a class="navbar-brand text-4xl anchor-text" href="index.html">AI in Healthcare</a>
           </nav>
           <img class="img-background-restyle" src="assets/img/aneuraltif-02.png" alt="Logo">
       </div>
     </section>
     <!-- Hero Area End -->
-
     <!-- Aneural is Section Start -->
     <section id="services" class="hero-area-restyle pt-8 pb-8">
       <div class="container grid grid-cols-1 lg:grid-cols-2">
@@ -137,8 +135,6 @@
         
     </section>
     <!-- Aneural is Section End -->
-
-
     <!-- Get Started Section Start -->
     <section id="started" class="bg-neutral-lightgray py-24">
       <div class="container">
