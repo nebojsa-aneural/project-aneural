@@ -65,6 +65,33 @@
       -tw-text-opacity: 1;
       color: #3fc4ae
     }
+    .header-bg {
+      background-color: rgb(0 0 0 / 100%);
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: calc(120vh);
+    }
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-container h2 {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      width: 100%; 
+    }
+
     @media (min-width: 320px) and (max-width: 768px) {
       .navbar-holder {
         margin-left: 0;
@@ -76,21 +103,123 @@
         font-size: 1.25rem;
         line-height: 1.5rem;
       }
+      .image-container h2 {
+        position: absolute;
+        top: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 100%; 
+      }
+      .text-small{
+        font-size: 1.175rem;
+      }
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: calc(70vh);
+      }
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;  
+        object-fit: cover;
+      }
     }
   </style>
 
+
   <body>
-    <section id="hero-area" class="relative  bg-hero-ball bg-center bg-no-repeat main-section-wrapper">
+
+    <!-- <section id="hero-area" class="relative  bg-hero-ball bg-center bg-no-repeat main-section-wrapper">
       <div class="navbar-container">
           <nav class="navbar navbar-expand-lg flex items-center justify-start absolute navbar-holder">
             <img class="h-28" src="assets/img/transparent_aneural_white.png" alt="Logo">
             <a class="navbar-brand text-4xl anchor-text" href="index.html">Aneural</a>
           </nav>
-          <img class="img-background-restyle" src="assets/img/sketches.png" alt="Logo">
+          <img class="img-background-restyle" src="assets/img/animacija-01small.jpg" alt="Logo"> -->
           <!-- We craft personalized and scalable solutions, transforming healthcare using AI -->
-      </div>
-    </section>
+      <!-- </div>
+    </section> -->
     <!-- Hero Area End -->
+
+        <!-- Header Area wrapper Starts -->
+        <header id="header-wrap" class="relative border-neutral-neutral_gray2 header-bg">
+          <!-- Navbar Start -->
+          <div class="navigation top-0 left-0 w-full z-30 duration-300">
+            <div class="container">
+              <nav class="navbar navbar-expand-lg flex justify-end items-center justify-between relative duration-300" x-data="{ one: false, two: false, three: false }">
+                <a class="navbar-brand" href="index.html">
+                  <img class="h-20 pt-4 pb-4" src="assets/img/transparent_aneural_white.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler focus:outline-none block lg:hidden" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                </button>
+    
+                <div class="collapse navbar-collapse hidden lg:block duration-300 shadow absolute top-100 left-0 mt-full bg-white z-20 px-5 w-full lg:static lg:bg-transparent lg:shadow-none">
+                  <ul class="navbar-nav mr-auto justify-end items-center lg:flex">
+                    <li class="nav-item relative">
+                      <a class="page-scroll active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item relative">
+                      <button class="page-scroll" @click="one = true">Research <span class="chevron"></span></button>
+                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="one" @click.away="one = false"
+                        x-cloak>
+                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                          <a href="label.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> AI in Computational Neuroscience </a>
+                          <a href="core.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> Medical Imaging</a>
+                          <a href="deploy.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary"> Markova prica  </a>
+                        </div>
+                      </div>
+                    </li>          
+                    <li class="nav-item relative">
+                      <button class="page-scroll" @click="three = true">Resources <span class="chevron"></span></button>
+                      <div class="absolute w-52 top-0 z-50 w-screen max-w-xs p-2 mx-0 my-12 text-gray-800 border-2 border-brand-light transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2" x-show.transition.in.opacity.out.opacity="three" @click.away="three = false"
+                        x-cloak>
+                        <div class="flex flex-col space-y-1 font-medium text-gray-800">
+                          <a href="about.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">About Us</a>
+                          <a href="started.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Getting Started</a>
+                          <a href="community.html" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Community</a>
+                          <a href="https://medium.com/@monai" target="_blank" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
+                        </div>
+                      </div>
+                    </li>                                
+                    <li class="nav-item relative">
+                      <a class="page-scroll" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item relative">
+                      <a class="page-scroll" target="_blank" href="https://github.com/Project-MONAI">Contact</a>
+                    </li>                
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!-- Navbar End -->
+
+        </header>
+        <!-- Header Area wrapper End -->
+        <!-- Hero Area Start -->
+        <section id="landing" class="">
+          <div class="image-container">
+              <video autoplay muted class="video-background">
+                <source src="/assets//img/animate_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <h2 class="mb-8 text-center text-5xl font-bold wow text-white text-small">We craft personalized and scalable solutions, <br />
+              transforming Healthcare using AI
+            </h2>
+          </div>
+        </section>
+        
+        <!-- Hero Area End -->
+    
     <!-- Aneural is Section Start -->
     <section id="services" class="hero-area-restyle pt-8 pb-8">
       <div class="container grid grid-cols-1 lg:grid-cols-2">
@@ -147,7 +276,7 @@
           <div class="p-8 bg-neutral-purewhite rounded-lg">
             <h2 class="text-xl font-bold text-center pb-4">AI in Computational Neuroscience</h2>
             <div class="aspect-w-3 aspect-h-2">
-              <img class="object-contain" src="assets/img/brain_sketch_white_2.png" />
+              <img class="object-contain" src="assets/img/mozgic-03.jpg" />
             </div>
             <p class="pt-4">Our solution use recent advances in AI to help driving the stimulation for treating neurological diseases.</p>
             <!-- <div class="mt-4">
@@ -157,7 +286,7 @@
           <div class="p-8 bg-neutral-purewhite rounded-lg">
             <h2 class="text-xl font-bold text-center pb-4">Medical Imaging</h2>
             <div class="aspect-w-3 aspect-h-2">
-              <img class="object-contain" src="assets/img/chest_sketch_white.png" />
+              <img class="object-contain" src="assets/img/plucal-02.jpg" />
             </div>
             <p class="pt-4">Aneural solutions use state-of-the-art architectures specific to for early tumor detection.</p>
             <!-- <div class="mt-4">
@@ -167,7 +296,7 @@
           <div class="p-8 bg-neutral-purewhite rounded-lg">
             <h2 class="text-xl font-bold text-center pb-4">Build your First Medical Chatbot</h2>
             <div class="aspect-w-3 aspect-h-2">
-              <img class="object-contain" src="assets/img/lungs_sketch_white.png" />
+              <img class="object-contain" src="assets/img/neuroni-01.jpg" />
             </div>
             <p class="pt-4">Utilize Aneural medical chatbot to build your first AI application. </p>
             <!-- <div class="mt-4">
